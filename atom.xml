@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Sea&#39;s Blog</title>
   
   
   <link href="https://innovatedmonster.github.io/atom.xml" rel="self"/>
   
   <link href="https://innovatedmonster.github.io/"/>
-  <updated>2022-12-05T01:19:52.896Z</updated>
+  <updated>2022-12-05T02:03:55.433Z</updated>
   <id>https://innovatedmonster.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Sea Man</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="https://innovatedmonster.github.io/2022/12/05/wo-de-di-yi-pian-bo-ke/"/>
     <id>https://innovatedmonster.github.io/2022/12/05/wo-de-di-yi-pian-bo-ke/</id>
     <published>2022-12-05T01:15:03.000Z</published>
-    <updated>2022-12-05T01:19:52.896Z</updated>
+    <updated>2022-12-05T02:03:55.433Z</updated>
     
     
     

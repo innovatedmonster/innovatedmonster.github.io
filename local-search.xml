@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>编译安装caffe</title>
+    <link href="/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/"/>
+    <url>/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/</url>
+    
+    <content type="html"><![CDATA[<h1 id="编译安装caffe及其基本用法"><a href="#编译安装caffe及其基本用法" class="headerlink" title="编译安装caffe及其基本用法"></a>编译安装caffe及其基本用法</h1><h2 id="一-基本环境"><a href="#一-基本环境" class="headerlink" title="一.基本环境"></a>一.基本环境</h2><p>本文使用的基本环境是ubuntu18.04，python3.6和不使用GPU，已经更新过apt和安装了vim</p><h2 id="二-编译安装"><a href="#二-编译安装" class="headerlink" title="二.编译安装"></a>二.编译安装</h2><h3 id="1-下载源代码"><a href="#1-下载源代码" class="headerlink" title="1.下载源代码"></a>1.下载源代码</h3><ul><li>方式一 git克隆代码<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#在命令行窗口输入如下命令</span><br>git <span class="hljs-built_in">clone</span> https://github.com/BVLC/caffe.git<br></code></pre></td></tr></tbody></table></figure></li><li>方式二 到官网下载  <blockquote><p>浏览器访问<a href="https://github.com/BVLC/caffe">https://github.com/BVLC/caffe</a><br>下载代码</p></blockquote></li></ul><h3 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2.安装依赖"></a>2.安装依赖</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#分别输入如下命令</span><br>apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev  \<br>libopencv-dev  libhdf5-serial-dev  protobuf-compiler<br><br>apt-get install --no-install-recommends libboost-all-dev<br><br>apt-get install libatlas-base-dev<br><br>apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev<br><br>apt-get install libhdf5-dev<br></code></pre></td></tr></tbody></table></figure><h3 id="3-配置Makefile-config"><a href="#3-配置Makefile-config" class="headerlink" title="3.配置Makefile.config"></a>3.配置Makefile.config</h3><ul><li>进入caffe根目录<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> caffe<br></code></pre></td></tr></tbody></table></figure></li><li>创建Makefile.config的初始文件<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">copy Makefile.config.example Makefile.config<br></code></pre></td></tr></tbody></table></figure></li><li>修改Makefile.config文件  <blockquote><p>python路径：  </p><blockquote><p>1.将<br>  <mark>#</mark>PYTHON_INCLUDE := /usr/include/python2.7 \<br>  <mark>#</mark>/usr/lib/python2.7/dist-packages/numpy/core/include<br>  注释掉（高亮的#是我们需要加的）<br>  2.对<br>   PYTHON_LIBRARIES := boost_python3 python3.<mark>6</mark>m \<br>  PYTHON_INCLUDE := /usr/include/python3.<mark>6</mark>m \<br>  /usr/<mark>local/</mark>lib/python3.<mark>6</mark>/dist-packages/numpy/core/include<br>  取消注释（原来以上内容每一行前面有#，只需要将#去掉）<br>  高亮部分就是需要添加或修改的地方</p></blockquote></blockquote><blockquote><p>库路径：</p><blockquote><p>将对应位置的内容改成<br>      INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include <mark>/usr/include/hdf5/serial/</mark><br>      LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib <mark>/usr/lib/x86_64-linux-gnu/hdf5/serial/</mark><br>      其中高亮部分就是我们需要添加的内容</p></blockquote></blockquote></li></ul><h3 id="4-编译和安装"><a href="#4-编译和安装" class="headerlink" title="4.编译和安装"></a>4.编译和安装</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">make all -j8  <br><br>make <span class="hljs-built_in">test</span> -j8  <br><br>make runtest -j8  <br><br>make pycaffe<br></code></pre></td></tr></tbody></table></figure><h2 id="三-基本用法"><a href="#三-基本用法" class="headerlink" title="三.基本用法"></a>三.基本用法</h2><ul><li>请自行百度caffe mnist，网上和《21天实战caffe》书中对应mnist数据集部分内容很像。如果条件允许，也可以看此书相应部分，里面讲的非常通俗易懂，在此不再赘述。</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>caffe 踩坑</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的第一篇博客</title>
     <link href="/2022/12/05/wo-de-di-yi-pian-bo-ke/"/>
     <url>/2022/12/05/wo-de-di-yi-pian-bo-ke/</url>

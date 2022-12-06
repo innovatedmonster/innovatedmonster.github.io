@@ -16,26 +16,24 @@
   <meta name="author" content="Sea Man">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2022.12.5上午，我花了四个小时搭建了第一个博客，好耶😸">
+    <meta name="description" content="编译安装caffe及其基本用法一.基本环境本文使用的基本环境是ubuntu18.04，python3.6和不使用GPU，已经更新过apt和安装了vim 二.编译安装1.下载源代码 方式一 git克隆代码12#在命令行窗口输入如下命令git clone https:&#x2F;&#x2F;github.com&#x2F;BVLC&#x2F;caffe.git 方式二 到官网下载   浏览器访问https:&#x2F;&#x2F;github.com&#x2F;BVLC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="https://innovatedmonster.github.io/2022/12/05/wo-de-di-yi-pian-bo-ke/index.html">
+<meta property="og:title" content="编译安装caffe">
+<meta property="og:url" content="https://innovatedmonster.github.io/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/index.html">
 <meta property="og:site_name" content="Sea&#39;s Blog">
-<meta property="og:description" content="2022.12.5上午，我花了四个小时搭建了第一个博客，好耶😸">
+<meta property="og:description" content="编译安装caffe及其基本用法一.基本环境本文使用的基本环境是ubuntu18.04，python3.6和不使用GPU，已经更新过apt和安装了vim 二.编译安装1.下载源代码 方式一 git克隆代码12#在命令行窗口输入如下命令git clone https:&#x2F;&#x2F;github.com&#x2F;BVLC&#x2F;caffe.git 方式二 到官网下载   浏览器访问https:&#x2F;&#x2F;github.com&#x2F;BVLC">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f638.png?v8">
-<meta property="article:published_time" content="2022-12-05T01:15:03.000Z">
-<meta property="article:modified_time" content="2022-12-05T02:15:08.745Z">
+<meta property="article:published_time" content="2022-12-06T05:09:02.512Z">
+<meta property="article:modified_time" content="2022-12-06T06:39:57.990Z">
 <meta property="article:author" content="Sea Man">
-<meta property="article:tag" content="测试">
+<meta property="article:tag" content="caffe 踩坑">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f638.png?v8">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>我的第一篇博客 - Sea&#39;s Blog</title>
+  <title>编译安装caffe - Sea&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的第一篇博客"></span>
+            <span id="subtitle" data-typed-text="编译安装caffe"></span>
           
         </div>
 
@@ -241,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-05 09:15" pubdate>
-          2022年12月5日 上午
+        <time datetime="2022-12-06 13:09" pubdate>
+          2022年12月6日 下午
         </time>
       </span>
     
@@ -253,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          32 字
+          1.3k 字
         
       </span>
     
@@ -264,7 +262,7 @@
         
         
         
-          1 分钟
+          11 分钟
         
       </span>
     
@@ -310,12 +308,41 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">我的第一篇博客</h1>
+            <h1 style="display: none">编译安装caffe</h1>
             
             
               <div class="markdown-body">
                 
-                <p>2022.12.5上午，我花了四个小时搭建了第一个博客，好耶<span class="github-emoji"><span>😸</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f638.png?v8" srcset="/img/loading.gif" lazyload aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+                <h1 id="编译安装caffe及其基本用法"><a href="#编译安装caffe及其基本用法" class="headerlink" title="编译安装caffe及其基本用法"></a>编译安装caffe及其基本用法</h1><h2 id="一-基本环境"><a href="#一-基本环境" class="headerlink" title="一.基本环境"></a>一.基本环境</h2><p>本文使用的基本环境是ubuntu18.04，python3.6和不使用GPU，已经更新过apt和安装了vim</p>
+<h2 id="二-编译安装"><a href="#二-编译安装" class="headerlink" title="二.编译安装"></a>二.编译安装</h2><h3 id="1-下载源代码"><a href="#1-下载源代码" class="headerlink" title="1.下载源代码"></a>1.下载源代码</h3><ul>
+<li>方式一 git克隆代码<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#在命令行窗口输入如下命令</span><br>git <span class="hljs-built_in">clone</span> https://github.com/BVLC/caffe.git<br></code></pre></td></tr></tbody></table></figure></li>
+<li>方式二 到官网下载  <blockquote>
+<p>浏览器访问<a target="_blank" rel="noopener" href="https://github.com/BVLC/caffe">https://github.com/BVLC/caffe</a><br>下载代码</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2.安装依赖"></a>2.安装依赖</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#分别输入如下命令</span><br>apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev  \<br>libopencv-dev  libhdf5-serial-dev  protobuf-compiler<br><br>apt-get install --no-install-recommends libboost-all-dev<br><br>apt-get install libatlas-base-dev<br><br>apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev<br><br>apt-get install libhdf5-dev<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="3-配置Makefile-config"><a href="#3-配置Makefile-config" class="headerlink" title="3.配置Makefile.config"></a>3.配置Makefile.config</h3><ul>
+<li>进入caffe根目录<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> caffe<br></code></pre></td></tr></tbody></table></figure></li>
+<li>创建Makefile.config的初始文件<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">copy Makefile.config.example Makefile.config<br></code></pre></td></tr></tbody></table></figure></li>
+<li>修改Makefile.config文件  <blockquote>
+<p>python路径：  </p>
+<blockquote>
+<p>1.将<br>  <mark>#</mark>PYTHON_INCLUDE := /usr/include/python2.7 \<br>  <mark>#</mark>/usr/lib/python2.7/dist-packages/numpy/core/include<br>  注释掉（高亮的#是我们需要加的）<br>  2.对<br>   PYTHON_LIBRARIES := boost_python3 python3.<mark>6</mark>m \<br>  PYTHON_INCLUDE := /usr/include/python3.<mark>6</mark>m \<br>  /usr/<mark>local/</mark>lib/python3.<mark>6</mark>/dist-packages/numpy/core/include<br>  取消注释（原来以上内容每一行前面有#，只需要将#去掉）<br>  高亮部分就是需要添加或修改的地方</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>库路径：</p>
+<blockquote>
+<p>将对应位置的内容改成<br>      INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include <mark>/usr/include/hdf5/serial/</mark><br>      LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib <mark>/usr/lib/x86_64-linux-gnu/hdf5/serial/</mark><br>      其中高亮部分就是我们需要添加的内容</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="4-编译和安装"><a href="#4-编译和安装" class="headerlink" title="4.编译和安装"></a>4.编译和安装</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">make all -j8  <br><br>make <span class="hljs-built_in">test</span> -j8  <br><br>make runtest -j8  <br><br>make pycaffe<br></code></pre></td></tr></tbody></table></figure>
+<h2 id="三-基本用法"><a href="#三-基本用法" class="headerlink" title="三.基本用法"></a>三.基本用法</h2><ul>
+<li>请自行百度caffe mnist，网上和《21天实战caffe》书中对应mnist数据集部分内容很像。如果条件允许，也可以看此书相应部分，里面讲的非常通俗易懂，在此不再赘述。</li>
+</ul>
 
                 
               </div>
@@ -328,7 +355,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%B5%8B%E8%AF%95/">#测试</a>
+        <a href="/tags/caffe-%E8%B8%A9%E5%9D%91/">#caffe 踩坑</a>
       
     </div>
   
@@ -340,8 +367,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的第一篇博客</div>
-      <div>https://innovatedmonster.github.io/2022/12/05/wo-de-di-yi-pian-bo-ke/</div>
+      <div>编译安装caffe</div>
+      <div>https://innovatedmonster.github.io/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +380,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月5日</div>
+          <div>2022年12月6日</div>
         </div>
       
       
@@ -385,15 +412,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/" title="编译安装caffe">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">编译安装caffe</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/12/05/wo-de-di-yi-pian-bo-ke/" title="我的第一篇博客">
+                        <span class="hidden-mobile">我的第一篇博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

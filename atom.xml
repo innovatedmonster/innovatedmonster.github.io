@@ -6,7 +6,7 @@
   <link href="https://innovatedmonster.github.io/atom.xml" rel="self"/>
   
   <link href="https://innovatedmonster.github.io/"/>
-  <updated>2022-12-06T06:39:57.990Z</updated>
+  <updated>2022-12-07T22:34:36.517Z</updated>
   <id>https://innovatedmonster.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>html5学习笔记</title>
+    <link href="https://innovatedmonster.github.io/2022/12/08/html5-xue-xi-bi-ji/"/>
+    <id>https://innovatedmonster.github.io/2022/12/08/html5-xue-xi-bi-ji/</id>
+    <published>2022-12-07T21:37:13.982Z</published>
+    <updated>2022-12-07T22:34:36.517Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;html5学习笔记&quot;&gt;&lt;a href=&quot;#html5学习笔记&quot; class=&quot;headerlink&quot; title=&quot;html5学习笔记&quot;&gt;&lt;/a&gt;html5学习笔记&lt;/h1&gt;&lt;h2 id=&quot;一-基本结构&quot;&gt;&lt;a href=&quot;#一-基本结构&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="html" scheme="https://innovatedmonster.github.io/tags/html/"/>
+    
+    <category term="前端" scheme="https://innovatedmonster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>编译安装caffe</title>
     <link href="https://innovatedmonster.github.io/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/"/>
     <id>https://innovatedmonster.github.io/2022/12/06/bian-yi-an-zhuang-caffe-ji-qi-ji-ben-shi-yong/</id>
     <published>2022-12-06T05:09:02.512Z</published>
-    <updated>2022-12-06T06:39:57.990Z</updated>
+    <updated>2022-12-07T22:34:38.776Z</updated>
     
     
       
@@ -35,7 +60,9 @@
     
     
     
-    <category term="caffe 踩坑" scheme="https://innovatedmonster.github.io/tags/caffe-%E8%B8%A9%E5%9D%91/"/>
+    <category term="caffe" scheme="https://innovatedmonster.github.io/tags/caffe/"/>
+    
+    <category term="踩坑" scheme="https://innovatedmonster.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
     
   </entry>
   

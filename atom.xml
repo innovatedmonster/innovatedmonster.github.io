@@ -6,7 +6,7 @@
   <link href="https://innovatedmonster.github.io/atom.xml" rel="self"/>
   
   <link href="https://innovatedmonster.github.io/"/>
-  <updated>2022-12-07T22:34:36.517Z</updated>
+  <updated>2023-03-04T13:12:00.137Z</updated>
   <id>https://innovatedmonster.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>量化第一篇</title>
+    <link href="https://innovatedmonster.github.io/2023/03/04/liang-hua-di-yi-pian/"/>
+    <id>https://innovatedmonster.github.io/2023/03/04/liang-hua-di-yi-pian/</id>
+    <published>2023-03-04T13:12:14.056Z</published>
+    <updated>2023-03-04T13:12:00.137Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;量化第一篇&quot;&gt;&lt;a href=&quot;#量化第一篇&quot; class=&quot;headerlink&quot; title=&quot;量化第一篇&quot;&gt;&lt;/a&gt;量化第一篇&lt;/h1&gt;&lt;h2 id=&quot;一-背景和定义&quot;&gt;&lt;a href=&quot;#一-背景和定义&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="量化" scheme="https://innovatedmonster.github.io/tags/%E9%87%8F%E5%8C%96/"/>
+    
+    <category term="模型压缩" scheme="https://innovatedmonster.github.io/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>html5学习笔记</title>
